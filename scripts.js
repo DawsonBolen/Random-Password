@@ -23,9 +23,9 @@ function generatePassword() {
    //generate a random password
   let passwordCharacters = [];
   const specialCharacters = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-  //const numbers = '0123456789';
-  //const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  //const lowerCase = "abcdefghijklmnopqrstuvwxyz";
+  const numbers = '0123456789';
+  const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 
   //to do handle other characters
 
@@ -33,9 +33,19 @@ function generatePassword() {
     passwordCharacters = passwordCharacters.concat(specialCharacters.split(""));
   }
 
-  //if (includeNumbers) {
-  //  passwordCharacters = passwordCharacters.concat(numbers.split(""));
- // }
+  if (includeNumbers) {
+    passwordCharacters = passwordCharacters.concat(numbers.split(""));
+  }
+
+  if (includeUpperCase) {
+    passwordCharacters = passwordCharacters.concat(upperCase.split(""));
+  }
+
+  if (includeLoweCase) {
+    passwordCharacters = passwordCharacters.concat(lowerCase.split(""));
+  }
+
+
 
   let results = "";
   for(var i = 0; i < passwordLength; i++) {
@@ -43,6 +53,8 @@ function generatePassword() {
     let randomCharacter = passwordCharacters[randomIndex];
     results += randomCharacter;
   }
+
+
  
   //Return Generated password
   return results;
