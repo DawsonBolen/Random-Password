@@ -27,20 +27,23 @@ function generatePassword() {
   const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 
-  //to do handle other characters
-
+  
+  //special characters
   if (includeSpecialCharacters) {
     passwordCharacters = passwordCharacters.concat(specialCharacters.split(""));
   }
 
+  //numbers
   if (includeNumbers) {
     passwordCharacters = passwordCharacters.concat(numbers.split(""));
   }
 
+  //uppercase
   if (includeUpperCase) {
     passwordCharacters = passwordCharacters.concat(upperCase.split(""));
   }
 
+  //lowercase
   if (includeLoweCase) {
     passwordCharacters = passwordCharacters.concat(lowerCase.split(""));
   }
